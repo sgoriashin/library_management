@@ -11,4 +11,19 @@
 
     <artifactId>backend</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.goriashin</groupId>
+            <artifactId>api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.goriashin</groupId>
+            <artifactId>core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>
