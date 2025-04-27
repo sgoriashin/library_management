@@ -11,13 +11,13 @@ public class BookTM {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "name")
+    @Column
     private String name;
-    @Column(name = "author")
+    @Column
     private String author;
-    @Column(name = "genre")
+    @Column
     private String genre;
-    @Column(name = "description")
+    @Column
     private String description;
 
 }

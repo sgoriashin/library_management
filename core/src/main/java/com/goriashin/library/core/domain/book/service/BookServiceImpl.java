@@ -19,10 +19,15 @@ public class BookServiceImpl implements BookService {
     @Override
     public BookRefView addBook(BookCreateView createView) {
         BookTM bookTM = bookConverter.fromView(createView);
-        repository.save(bookTM);
+        repository.saveAndFlush(bookTM);
         return BookRefView.builder()
                 .id(bookTM.getId())
                 .build();
+    }
+
+    @Override
+    public void deleteBook(Long id) {
+        repository.deleteById(id);
     }
 
 }

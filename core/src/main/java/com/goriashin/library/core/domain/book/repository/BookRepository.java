@@ -5,6 +5,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BookRepository extends JpaRepository<BookTM, Long> {
 
-     BookTM save(BookTM book);
-
 }

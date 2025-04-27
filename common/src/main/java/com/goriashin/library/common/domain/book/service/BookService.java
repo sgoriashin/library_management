@@ -6,5 +6,6 @@ import com.goriashin.library.common.domain.book.view.BookCreateView;
 public interface BookService {
 
     BookRefView addBook(BookCreateView createView);
+    void deleteBook(Long id);
 
 }
