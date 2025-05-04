@@ -1,4 +1,4 @@
-package com.goriashin.library.api.controllers;
+package com.goriashin.library.api.controllers.book;
 
 
 import com.goriashin.library.common.domain.book.view.BookRefView;
