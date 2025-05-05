@@ -1,8 +1,8 @@
-package com.goriashin.library.api.controllers.auth;
+package com.goriashin.library.api.controllers.domain.user;
 
-import com.goriashin.library.api.controllers.auth.model.AuthRequest;
-import com.goriashin.library.api.controllers.auth.model.AuthResponse;
-import com.goriashin.library.api.controllers.auth.jwt.JwtUtil;
+import com.goriashin.library.api.controllers.domain.user.model.UserCredentials;
+import com.goriashin.library.api.controllers.domain.user.model.AuthResponse;
+import com.goriashin.library.api.controllers.domain.user.jwt.JwtUtil;
 import com.goriashin.library.common.domain.user.service.RegisterService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(path = "/auth")
 @AllArgsConstructor
-public class AuthController {
+public class UserAuthController {
 
     private final RegisterService registerService;
     private final AuthenticationManager authenticationManager;
@@ -29,7 +29,7 @@ public class AuthController {
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Пользователь зарегистрирован"),
     })
-    public ResponseEntity<String> register(@RequestBody AuthRequest request) {
+    public ResponseEntity<String> register(@RequestBody UserCredentials request) {
         registerService.register(request.getUsername(), request.getPassword());
         return ResponseEntity.ok("User " + request.getUsername() + " registered successfully");
     }
@@ -39,7 +39,7 @@ public class AuthController {
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Токен получен"),
     })
-    public ResponseEntity<?> login(@RequestBody AuthRequest request) {
+    public ResponseEntity<?> login(@RequestBody UserCredentials request) {
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));
         } catch (AuthenticationException e) {

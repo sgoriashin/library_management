@@ -1,6 +1,6 @@
-package com.goriashin.library.api.controllers.auth.config;
+package com.goriashin.library.api.controllers.config;
 
-import com.goriashin.library.api.controllers.auth.jwt.JwtAuthFilter;
+import com.goriashin.library.api.controllers.domain.user.jwt.JwtAuthFilter;
 import com.goriashin.library.common.domain.user.service.MyUserDetailsService;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;

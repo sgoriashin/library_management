@@ -1,4 +1,4 @@
-package com.goriashin.library.api.controllers.auth.model;
+package com.goriashin.library.api.controllers.domain.user.model;
 
 import lombok.Data;
 
@@ -11,7 +11,4 @@ public class AuthResponse {
         this.token = token;
     }
 
-    public String getToken() {
-        return token;
-    }
 }

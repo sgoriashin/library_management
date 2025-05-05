@@ -1,4 +1,4 @@
-package com.goriashin.library.core.domain;
+package com.goriashin.library.core.utils;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

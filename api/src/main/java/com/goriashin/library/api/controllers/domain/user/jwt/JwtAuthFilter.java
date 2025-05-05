@@ -1,4 +1,4 @@
-package com.goriashin.library.api.controllers.auth.jwt;
+package com.goriashin.library.api.controllers.domain.user.jwt;
 
 import com.goriashin.library.common.domain.user.service.MyUserDetailsService;
 import jakarta.servlet.FilterChain;

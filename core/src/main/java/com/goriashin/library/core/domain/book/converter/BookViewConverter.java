@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class BookConverter {
+public class BookViewConverter {
 
     public BookTM fromView(BookCreateView view) {
         BookTM bookTM = new BookTM();
@@ -41,7 +41,7 @@ public class BookConverter {
         return view;
     }
 
-    public BookTM mutateView(BookTM bookTM, BookUpdateView view) {
+    public BookTM mutate(BookTM bookTM, BookUpdateView view) {
         if (view == null) {
             return bookTM;
         }

@@ -1,4 +1,4 @@
-package com.goriashin.library.api.controllers.book;
+package com.goriashin.library.api.controllers.domain.book;
 
 
 import com.goriashin.library.common.domain.book.service.BookSearchService;

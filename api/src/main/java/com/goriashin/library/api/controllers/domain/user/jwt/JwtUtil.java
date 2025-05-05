@@ -1,4 +1,4 @@
-package com.goriashin.library.api.controllers.auth.jwt;
+package com.goriashin.library.api.controllers.domain.user.jwt;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
