@@ -4,6 +4,9 @@ import com.goriashin.library.api.controllers.auth.model.AuthRequest;
 import com.goriashin.library.api.controllers.auth.model.AuthResponse;
 import com.goriashin.library.api.controllers.auth.jwt.JwtUtil;
 import com.goriashin.library.common.domain.user.service.RegisterService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,12 +25,20 @@ public class AuthController {
     private final JwtUtil jwtUtil;
 
     @PostMapping(path="/register")
+    @Operation(summary = "Зарегистрировать нового пользователя")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Пользователь зарегистрирован"),
+    })
     public ResponseEntity<String> register(@RequestBody AuthRequest request) {
         registerService.register(request.getUsername(), request.getPassword());
         return ResponseEntity.ok("User " + request.getUsername() + " registered successfully");
     }
 
     @PostMapping(path = "/login")
+    @Operation(summary = "Получить токен доступа")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Токен получен"),
+    })
     public ResponseEntity<?> login(@RequestBody AuthRequest request) {
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));

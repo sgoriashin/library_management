@@ -23,6 +23,7 @@
 		<lombok.version>1.18.38</lombok.version>
 		<spring.version>3.4.5</spring.version>
 		<spring-security.version>6.4.5</spring-security.version>
+		<spring-doc.version>2.8.6</spring-doc.version>
 		<postgres.version>42.7.5</postgres.version>
 		<jsonwebtoken.version>0.11.5</jsonwebtoken.version>
 		<jackson.version>2.17.0</jackson.version>
@@ -104,6 +105,11 @@
 				<groupId>com.fasterxml.jackson.core</groupId>
 				<artifactId>jackson-databind</artifactId>
 				<version>${jackson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+				<version>${spring-doc.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
