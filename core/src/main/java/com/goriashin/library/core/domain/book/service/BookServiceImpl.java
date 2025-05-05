@@ -2,6 +2,7 @@ package com.goriashin.library.core.domain.book.service;
 
 import com.goriashin.library.common.domain.book.service.BookService;
 import com.goriashin.library.common.domain.book.view.BookRefView;
+import com.goriashin.library.common.domain.book.view.BookUpdateView;
 import com.goriashin.library.core.domain.book.converter.BookConverter;
 import com.goriashin.library.common.domain.book.view.BookCreateView;
 import com.goriashin.library.core.domain.book.model.BookTM;
@@ -19,6 +20,15 @@ public class BookServiceImpl implements BookService {
     @Override
     public BookRefView addBook(BookCreateView createView) {
         BookTM bookTM = bookConverter.fromView(createView);
+        repository.saveAndFlush(bookTM);
+        return BookRefView.builder()
+                .id(bookTM.getId())
+                .build();
+    }
+
+    @Override
+    public BookRefView updateBook(Long id, BookUpdateView updateView) {
+        BookTM bookTM = bookConverter.mutateView(repository.getReferenceById(id), updateView);
         repository.saveAndFlush(bookTM);
         return BookRefView.builder()
                 .id(bookTM.getId())

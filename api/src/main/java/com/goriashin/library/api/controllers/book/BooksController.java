@@ -4,6 +4,7 @@ package com.goriashin.library.api.controllers.book;
 import com.goriashin.library.common.domain.book.view.BookRefView;
 import com.goriashin.library.common.domain.book.view.BookCreateView;
 import com.goriashin.library.common.domain.book.service.BookService;
+import com.goriashin.library.common.domain.book.view.BookUpdateView;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +21,12 @@ public class BooksController {
     @ResponseStatus(HttpStatus.CREATED)
     public BookRefView addBook(@RequestBody BookCreateView body) {
         return bookService.addBook(body);
+    }
+
+    @PutMapping(path = "/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public BookRefView updateBook(@PathVariable("id") Long id, @RequestBody BookUpdateView body) {
+        return bookService.updateBook(id, body);
     }
 
     @DeleteMapping(path = "/{id}")
