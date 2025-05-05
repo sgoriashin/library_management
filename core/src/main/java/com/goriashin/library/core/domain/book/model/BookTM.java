@@ -12,7 +12,7 @@ public class BookTM {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column
-    private String name;
+    private String title;
     @Column
     private String author;
     @Column

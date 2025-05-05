@@ -3,8 +3,9 @@ package com.goriashin.library.common.domain.book.view;
 import lombok.Data;
 
 @Data
-public class BookUpdateView {
+public class BookFullView {
 
+    private Long id;
     private String title;
     private String author;
     private String genre;

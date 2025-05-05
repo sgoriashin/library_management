@@ -6,7 +6,7 @@ import lombok.Data;
 public class BookCreateView {
 
     private Long id;
-    private String name;
+    private String title;
     private String author;
     private String genre;
     private String description;
