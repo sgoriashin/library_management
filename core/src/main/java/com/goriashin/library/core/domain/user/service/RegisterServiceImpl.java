@@ -4,11 +4,13 @@ import com.goriashin.library.common.domain.user.service.RegisterService;
 import com.goriashin.library.core.domain.user.model.UserTM;
 import com.goriashin.library.core.domain.user.repository.UserRepository;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
+@Slf4j
 public class RegisterServiceImpl implements RegisterService {
 
     private final UserRepository userRepository;
@@ -23,6 +25,7 @@ public class RegisterServiceImpl implements RegisterService {
         user.setUsername(username);
         user.setPassword(passwordEncoder.encode(password));
         userRepository.save(user);
+        log.info("Registered user: {}", username);
     }
 
 }
