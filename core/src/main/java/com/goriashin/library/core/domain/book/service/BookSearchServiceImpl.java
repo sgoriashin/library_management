@@ -2,8 +2,8 @@ package com.goriashin.library.core.domain.book.service;
 
 import com.goriashin.library.common.domain.book.service.BookSearchService;
 import com.goriashin.library.common.domain.book.view.BookFullView;
+import com.goriashin.library.core.domain.book.converter.BookFullViewConverter;
 import com.goriashin.library.core.utils.SecurityUtils;
-import com.goriashin.library.core.domain.book.converter.BookViewConverter;
 import com.goriashin.library.core.domain.book.model.BookTM;
 import com.goriashin.library.core.domain.book.repository.BookRepository;
 import lombok.AllArgsConstructor;
@@ -18,7 +18,7 @@ import java.util.List;
 public class BookSearchServiceImpl implements BookSearchService {
 
     private final BookRepository repository;
-    private final BookViewConverter converter;
+    private final BookFullViewConverter converter;
 
     @Override
     public List<BookFullView> findBooksByFilter(String title, String author, String genre) {
